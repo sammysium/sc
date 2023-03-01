@@ -1,7 +1,6 @@
 {
     "interface":":4984",
     "adminInterface":"localhost:4985",
-    "log": ["*"],
     "logging":{
                 "default": {
                         "logFilePath": "/app/syncgateway/log/sync_gateway_error.log",
