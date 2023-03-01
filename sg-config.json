@@ -1,16 +1,4 @@
 {
-    "interface":":4984",
-    "adminInterface":"localhost:4985",
-    "logging":{
-                "default": {
-                        "logFilePath": "/app/syncgateway/log/sync_gateway_error.log",
-                        "rotation": {
-                                "maxsize": 250,
-                                "maxage": 14,
-                                "maxbackups": 30
-                        }
-                }
-        },
     "databases": {
         "fs_db_v0": {
             "server": "http://localhost:8091",
