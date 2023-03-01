@@ -4,7 +4,7 @@
     ],
     "databases": {
         "fs_db_v0": {
-            "server": "http://127.0.0.1:8091",
+            "server": "http://127.0.0.1:8094",
             "bucket": "offline-reads",
             "username": "bucket_user",
             "password": "password",
