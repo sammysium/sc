@@ -1,29 +1,8 @@
 {
-    "log": [
-        "*"
-    ],
-    "CORS": {
-        "Origin": [
-            "http://localhost:1234",
-            "http://localhost:4200",
-            "http://localhost:4300"
-        ],
-        "LoginOrigin": [
-            "http://localhost:1234",
-            "http://localhost:4200",
-            "http://localhost:4300"
-        ],
-        "Headers": [
-            "Content-Type",
-            "Authorization"
-        ]
-    },
-    "bootstrap_config": {
-        "use_tls_server": false
-    },
+    "log":["CRUD+", "REST+", "Changes+", "Attach+"],
     "databases": {
         "fs_db_v0": {
-            "server": "http://localhost",
+            "server": "http://localhost:8091",
             "bucket": "offline-reads",
             "username": "bucket_user",
             "password": "password",
@@ -32,60 +11,23 @@
             "num_index_replicas": 0,
             "sync": "function(doc, oldDoc) {\n  if (doc.replRole) {\n    requireRole('replicator');\n    if (doc.replRole !== 'replicator') {\n      requireRole(doc.replRole);\n      channel(doc.replRole);\n      if (doc.channels && doc.channels.length) {\n        doc.channels.each(function(channel) {\n          channel(doc.replRole + '_' + channel);\n        });\n      }\n    }\n  } else {\n    requireRole('sync_daemon');\n    channel(doc.channels);\n  }\n}",
             "users": {
-                "test": {
-                    "password": "password",
-                    "admin_channels": [
-                        "*"
-                    ],
-                    "all_channels": [
-                        "repayments_2404_260_159",
-                        "enrollments_2404_260_159",
-                        "groups_2404_260_159"
-                    ]
-                },
-                "test_large": {
-                    "password": "password",
-                    "admin_channels": [
-                        "*"
-                    ],
-                    "all_channels": [
-                        "repayments_7404_209_220",
-                        "enrollments_7404_209_220",
-                        "groups_7404_209_220"
-                    ]
-                },
-                "test_small": {
-                    "password": "password",
-                    "admin_channels": [
-                        "*"
-                    ],
-                    "all_channels": [
-                        "repayments_29404_21_240",
-                        "enrollments_29404_21_240",
-                        "groups_29404_21_240"
-                    ]
-                },
-                "test_alt": {
-                    "password": "password",
-                    "admin_channels": [
-                        "*"
-                    ],
-                    "all_channels": [
-                        "repayments_2646_121_250",
-                        "enrollments_2646_121_250",
-                        "groups_2646_121_250"
-                    ]
-                },
-                "sync_daemon_user": {
-                    "password": "password",
-                    "admin_roles": [
-                        "sync_daemon"
-                    ],
-                    "admin_channels": [
-                        "*"
-                    ]
+                "GUEST": {
+                    "disabled": false,
+                    "admin_channels": ["*"],
+                    "bucket": "offline-reads",
+            "username": "bucket_user",
+            "password": "password",
+            "enable_shared_bucket_access": true,
+            "import_docs": "continous",
+            "num_index_replicas": 0,
                 }
             }
         }
+    },
+    "CORS": {
+        "Origin": ["http://localhost:8080", "http://localhost:4200"],
+        "LoginOrigin": ["http://localhost:8080", "http://localhost:4200"],
+        "Headers": ["Content-Type"],
+        "MaxAge": 17280000
     }
 }
