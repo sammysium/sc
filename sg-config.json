@@ -19,7 +19,7 @@
             "password": "password",
             "enable_shared_bucket_access": true,
             "import_docs": "continous",
-            "num_index_replicas": 0,
+            "num_index_replicas": 0
                 }
             }
         }
