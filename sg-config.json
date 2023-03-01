@@ -23,7 +23,7 @@
     },
     "databases": {
         "fs_db_v0": {
-            "server": "couchbases://localhost:8091",
+            "server": "http://localhost:8091",
             "bucket": "offline-reads",
             "username": "bucket_user",
             "password": "password",
