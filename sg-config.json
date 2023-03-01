@@ -18,6 +18,9 @@
             "Authorization"
         ]
     },
+    "bootstrap_config": {
+        "use_tls_server": false
+    },
     "databases": {
         "fs_db_v0": {
             "server": "couchbases://localhost:8091",
