@@ -27,6 +27,9 @@
         "enabled": false
       }
     },
+    "bootstrap": {
+        "use_tls_server": false
+      },
     "databases": {
       "fs_db_v0": {
         "import_docs": "continuous",
