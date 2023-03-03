@@ -39,10 +39,8 @@
         "users": {
             "GUEST": { "disabled": false, "admin_channels": ["*"] }
           },
-        "revs_limit":20,
-        "bootstrap": {
-            "use_tls_server": false
-          }
+        "revs_limit":20
      }
-  }
+  },
+  "use_tls_server": false
   }	
