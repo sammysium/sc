@@ -36,10 +36,9 @@
         "username": "bucket_user",
         "password": "pwdpwdpwd",
         "num_index_replicas":0,
-        "users":{
-            "GUEST": {"disabled":true},
-            "bucket_user": {"password": "pwdpwdpwd", "admin_channels": ["*"]}
-        },
+        "users": {
+            "GUEST": { "disabled": false, "admin_channels": ["*"] }
+          },
         "revs_limit":20
      }
   }
