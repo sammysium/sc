@@ -1,18 +1,14 @@
 {
-     "bootstrap": {
-       "group_id": "group1",
-       "server": "couchbases://couchbase-server",
-       "username": "Administrator",
-       "password": "pwdpwdpwd"
+    "bootstrap":{
+        "group_id":"group1",
+        "server":"couchbases://couchbase-server",
+        "username":"Administrator",
+        "password":"pwdpwdpwd"
     },
-     "logging": {
-       "console": {
-         "log_level": "trace",
-         "log_keys": [
-                "*"
-            ]
-       
+    "logging": {
+        "console": {
+            "log_level":"trace",
+            "log_keys": ["*"]
         }
-     
     }
 }
