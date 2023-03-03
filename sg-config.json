@@ -28,7 +28,7 @@
       }
     },
     "databases": {
-      "fs_db_v0": {
+      "oaf": {
         "import_docs": "continuous",
         "enable_shared_bucket_access":true,  
         "bucket":"offline-reads",
