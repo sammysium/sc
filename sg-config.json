@@ -1,41 +1,46 @@
 {
-    "log": [
-        ""
-    ],
-    "databases": {
-        "fs_db_v0": {
-            "server": "http://127.0.0.1:8091",
-            "bucket": "offline-reads",
-            "username": "bucket_user",
-            "password": "password",
-            "enable_shared_bucket_access": true,
-            "num_index_replicas": 0,
-            "import_docs": true,
-            "users": {
-                "GUEST": {
-                    "disabled": true
-                },
-                "bucket_user": {
-                    "password": "password",
-                    "admin_channels": [
-                        ""
-                    ]
-                },
-                "user1": {
-                    "password": "password",
-                    "admin_channels": [
-                        "channel1"
-                    ]
-                },
-                "user2": {
-                    "password": "password",
-                    "admin_channels": [
-                        "channel2"
-                    ]
-                }
-            },
-            "sync": "function(doc, oldDoc) {\n  if (doc.replRole) {\n    requireRole('replicator');\n    if (doc.replRole !== 'replicator') {\n      requireRole(doc.replRole);\n      channel(doc.replRole);\n      if (doc.channels && doc.channels.length) {\n        doc.channels.each(function(channel) {\n          channel(doc.replRole + '_' + channel);\n        });\n      }\n    }\n  } else {\n    requireRole('sync_daemon');\n    channel(doc.channels);\n  }\n}"
-            
+    "interface":":4984",
+     "logging": {
+      "log_file_path": "/var/tmp/sglogs",
+      "console": {
+        "log_level": "debug",
+        "log_keys": ["*"]
+      },
+      "error": {
+        "enabled": true,
+        "rotation": {
+          "max_size": 20,
+          "max_age": 180
         }
-    }
-    }
+      },
+      "warn": {
+        "enabled": true,
+        "rotation": {
+          "max_size": 20,
+          "max_age": 90
+        }
+      },
+      "info": {
+        "enabled": false
+      },
+      "debug": {
+        "enabled": false
+      }
+    },
+    "databases": {
+      "fs_db_v0": {
+        "import_docs": "continuous",
+        "enable_shared_bucket_access":true,  
+        "bucket":"offline-reads",
+        "server": "http://db:8091",
+        "username": "bucket_user",
+        "password": "pwdpwdpwd",
+        "num_index_replicas":0,
+        "users":{
+            "GUEST": {"disabled":true},
+            "bucket_user": {"password": "pwdpwdpwd", "admin_channels": ["*"]}
+        },
+        "revs_limit":20
+     }
+  }
+  }	
