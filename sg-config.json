@@ -33,7 +33,7 @@
         "enable_shared_bucket_access":true,  
         "bucket":"offline-reads",
         "server": "http://127.0.0.1:8091",
-        "username": "bucket_user",
+        "username": "Administrator",
         "password": "pwdpwdpwd",
         "num_index_replicas":0,
         "users": {
