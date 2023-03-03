@@ -27,9 +27,6 @@
         "enabled": false
       }
     },
-    "bootstrap": {
-        "use_tls_server": false
-      },
     "databases": {
       "fs_db_v0": {
         "import_docs": "continuous",
@@ -42,7 +39,10 @@
         "users": {
             "GUEST": { "disabled": false, "admin_channels": ["*"] }
           },
-        "revs_limit":20
+        "revs_limit":20,
+        "bootstrap": {
+            "use_tls_server": false
+          }
      }
   }
   }	
