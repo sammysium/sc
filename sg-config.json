@@ -4,7 +4,7 @@
     ],
     "databases": {
         "fs-db-v0": {
-            "server": "http://172.17.0.16:8091",
+            "server": "http://172.17.0.1:8091",
             "bucket": "offline-reads",
             "username": "Adminstrator",
             "password": "pwdpwdpwd",
