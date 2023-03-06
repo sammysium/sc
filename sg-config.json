@@ -3,7 +3,7 @@
         ""
     ],
     "databases": {
-        "fs-db-v0": {
+        "oaf": {
             "server": "http://172.17.0.1:8091",
             "bucket": "offline-reads",
             "username": "Adminstrator",
