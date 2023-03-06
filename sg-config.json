@@ -20,7 +20,7 @@
                     "admin_channels": [
                         ""
                     ]
-                },
+                }
             },
             "sync": "function(doc, oldDoc) {\n  if (doc.replRole) {\n    requireRole('replicator');\n    if (doc.replRole !== 'replicator') {\n      requireRole(doc.replRole);\n      channel(doc.replRole);\n      if (doc.channels && doc.channels.length) {\n        doc.channels.each(function(channel) {\n          channel(doc.replRole + '_' + channel);\n        });\n      }\n    }\n  } else {\n    requireRole('sync_daemon');\n    channel(doc.channels);\n  }\n}"
             
