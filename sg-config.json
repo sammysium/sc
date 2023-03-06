@@ -1,14 +1,29 @@
 {
-    "bootstrap":{
-        "group_id":"group1",
-        "server":"couchbases://couchbase-server",
-        "username":"Administrator",
-        "password":"pwdpwdpwd"
-    },
-    "logging": {
-        "console": {
-            "log_level":"trace",
-            "log_keys": ["*"]
+    "log": [
+        ""
+    ],
+    "databases": {
+        "fs-db-v0": {
+            "server": "http://172.17.0.16:8091",
+            "bucket": "offline-reads",
+            "username": "bucket_user",
+            "password": "pwdpwdpwd",
+            "enable_shared_bucket_access": true,
+            "num_index_replicas": 0,
+            "import_docs": true,
+            "users": {
+                "GUEST": {
+                    "disabled": true
+                },
+                "bucket_user": {
+                    "password": "pwdpwdpwd",
+                    "admin_channels": [
+                        ""
+                    ]
+                },
+            },
+            "sync": "function(doc, oldDoc) {\n  if (doc.replRole) {\n    requireRole('replicator');\n    if (doc.replRole !== 'replicator') {\n      requireRole(doc.replRole);\n      channel(doc.replRole);\n      if (doc.channels && doc.channels.length) {\n        doc.channels.each(function(channel) {\n          channel(doc.replRole + '_' + channel);\n        });\n      }\n    }\n  } else {\n    requireRole('sync_daemon');\n    channel(doc.channels);\n  }\n}"
+            
         }
     }
-}
+    }
