@@ -6,7 +6,7 @@
         "fs-db-v0": {
             "server": "http://172.17.0.16:8091",
             "bucket": "offline-reads",
-            "username": "bucket_user",
+            "username": "Adminstrator",
             "password": "pwdpwdpwd",
             "enable_shared_bucket_access": true,
             "num_index_replicas": 0,
@@ -18,7 +18,7 @@
                 "bucket_user": {
                     "password": "pwdpwdpwd",
                     "admin_channels": [
-                        ""
+                        "*"
                     ]
                 }
             },
