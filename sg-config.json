@@ -1,7 +1,10 @@
 {
-    "log": [
-        ""
-    ],
+    "logging": {
+        "console": {
+            "enabled": true,
+            "log_level": "*"
+        }
+      },
     "databases": {
         "oaf": {
             "server": "http://172.17.0.1:8091",
