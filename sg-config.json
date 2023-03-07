@@ -1,4 +1,7 @@
 {
+    "bootstrap_config": {
+        "use_tls_server": false
+        },
     "logging": {
         "console": {
             "enabled": true,
