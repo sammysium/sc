@@ -1,4 +1,5 @@
 {
+    "bootstrap.use_tls_server":false,
     "logging": {
         "console": {
             "enabled": true,
@@ -7,9 +8,6 @@
       },
     "databases": {
         "oaf": {
-            "bootstrap": {
-                "use_tls_server": false
-                },
             "server": "http://172.17.0.1:8091",
             "bucket": "offline-reads",
             "username": "Administrator",
