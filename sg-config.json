@@ -1,7 +1,8 @@
 {
     "logging": {
         "console": {
-            "enabled": true
+            "enabled": true,
+            "log_level" : "info"
         }
       },
     "databases": {
