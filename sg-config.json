@@ -6,7 +6,7 @@
         "oaf": {
             "server": "http://172.17.0.1:8091",
             "bucket": "offline-reads",
-            "username": "Adminstrator",
+            "username": "Administrator",
             "password": "pwdpwdpwd",
             "enable_shared_bucket_access": true,
             "num_index_replicas": 0,
