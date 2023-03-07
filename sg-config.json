@@ -11,6 +11,7 @@
             "enable_shared_bucket_access": true,
             "num_index_replicas": 0,
             "import_docs": true,
+            "disable_persistent_config": true,
             "users": {
                 "GUEST": {
                     "disabled": true
