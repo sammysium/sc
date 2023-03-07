@@ -1,5 +1,5 @@
 {
-    "bootstrap.use_tls_server":false,
+    "use_tls_server":false,
     "logging": {
         "console": {
             "enabled": true,
