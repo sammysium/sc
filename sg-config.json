@@ -1,5 +1,5 @@
 {
-    "bootstrap_config": {
+    "bootstrap": {
         "use_tls_server": false
         },
     "logging": {
